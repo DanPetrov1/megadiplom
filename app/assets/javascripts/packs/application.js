@@ -1,0 +1,6 @@
+import "app/assets/javascripts/js/jquery.min.js"
+import "app/assets/javascripts/js/jquery.zoom.min.js"
+import "app/assets/javascripts/js/bootstrap.min.js"
+import "app/assets/javascripts/js/nouislider.min.js"
+import "app/assets/javascripts/js/slick.min.js"
+import "app/assets/javascripts/js/main.js"

@@ -1,0 +1,2 @@
+class BooksOrders < ApplicationRecord
+end

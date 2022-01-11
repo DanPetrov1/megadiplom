@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title> SNACK WELL </title>
+  </head>
+  <body>
+  <div class="section">
+    <!-- container -->
+    <div class="container">
+      <!-- row -->
+      <div class="row">
+
+
+
+        <!-- Products tab & slick -->
+        <div class="col-md-12">
+          <div class="row">
+            <div class="products-tabs">
+              <!-- tab -->
+              <div id="tab1" class="tab-pane fade in active">
+                <div class="products-slick slick-initialized slick-slider" data-nav="#slick-nav-1">
+                  <div class="slick-list draggable">
+                    <div class="slick-track">
+                      <!-- product -->
+                      <% @books.each do |book| %>
+                        <div class="product slick-slide" data-slick-index="1" aria-hidden="true" tabindex="-1" style="width: 213px;">
+                          <div class="product-body">
+                            <p class="product-category"><%= book.genre.title %></p>
+                            <h3 class="product-name"><a href=<%= "#{book.id}" %>><%= book.title %></a></h3>
+                            <h4 class="product-price"><%= book.cost %></h4>
+                            <div class="product-rating">
+                            </div>
+                            <div class="product-btns">
+                              <button class="add-to-wishlist" tabindex="-1"><i class="fa fa-heart"></i><span class="tooltipp">add to wishlist</span></button>
+                              <button class="add-to-compare" tabindex="-1"><i class="fa fa-exchange-alt"></i><span class="tooltipp">add to compare</span></button>
+                              <button class="quick-view" tabindex="-1"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+                            </div>
+                          </div>
+                          <div class="add-to-cart">
+                            <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                          </div>
+                        </div>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="slick-nav-1" class="products-slick-nav"><button class="slick-prev slick-arrow" aria-label="Previous" type="button" style="display: inline-block;">Previous</button><button class="slick-next slick-arrow" aria-label="Next" type="button" style="display: inline-block;">Next</button></div>
+              <!-- /tab -->
+            </div>
+          </div>
+        </div>
+        <!-- /Products tab & slick -->
+      </div>
+      <!-- /row -->
+    </div>
+    <!-- /container -->
+  </div>
+  <!-- Products tab & slick -->
+  </body>
+</html>

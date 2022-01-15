@@ -4,7 +4,7 @@ class BooksController < ApplicationController
   end
 
   def show
-    render json: Book.find(params[:id])
+    @book = Book.find(params[:id])
   end
 
   def quote
@@ -17,5 +17,17 @@ class BooksController < ApplicationController
 
   def done
     # code for confirmation page
+  end
+
+  def add_to_basket
+    basket.add(params[:id])
+    @books = Book.all
+    render :index
+  end
+
+  def delete_from_basket
+    basket.remove(params[:id])
+    @books = Book.all
+    render :index
   end
 end

@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :books do
     post '/' => :show, :on => :member
+    collection do
+      post 'add/:id', to: 'books#add_to_basket'
+      post 'delete/:id', to: 'books#delete_from_basket'
+    end
   end
 
   root to: 'books#index'

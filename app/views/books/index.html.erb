@@ -26,7 +26,7 @@
                         <div class="product slick-slide" data-slick-index="1" aria-hidden="true" tabindex="-1" style="width: 213px;">
                           <div class="product-body">
                             <p class="product-category"><%= book.genre.title %></p>
-                            <h3 class="product-name"><a href=<%= "#{book.id}" %>><%= book.title %></a></h3>
+                            <h3 class="product-name"><a href=<%= "/books/#{book.id}" %>><%= book.title %></a></h3>
                             <h4 class="product-price"><%= book.cost %></h4>
                             <div class="product-rating">
                             </div>
@@ -36,9 +36,11 @@
                               <button class="quick-view" tabindex="-1"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
                             </div>
                           </div>
-                          <div class="add-to-cart">
-                            <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                          </div>
+                          <%= simple_form_for :add, url: ('/books/add/' + book.id.to_s) do |form| %>
+                            <div class="add-to-cart">
+                              <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                            </div>
+                          <% end %>
                         </div>
                       <% end %>
                     </div>

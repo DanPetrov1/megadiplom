@@ -10,6 +10,11 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :baskets do
+    get 'index', to: 'baskets#index'
+    post 'create', to: 'baskets#create'
+  end
+
   root to: 'books#index'
 
   # resources :books, only: [:show]

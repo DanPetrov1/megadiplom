@@ -5,6 +5,9 @@ class Order < ApplicationRecord
   belongs_to :pickup_point
   belongs_to :user
 
+  validates :payment_method, presence: false
+  validates :pickup_point, presence: false
+  validates :user, presence: false
 
   before_create do
     self.order_date = Date.today

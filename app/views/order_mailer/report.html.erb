@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+<h1>Dear <%= @params["email"] %>!</h1>
+<p>
+  You have successfully created the order,
+  the cost is: <%= @sum %>. Address is <%= @params["address"] %><br>
+</p>
+</body>
+</html>

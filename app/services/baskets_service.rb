@@ -41,7 +41,7 @@ class BasketsService
   def sum
     products = JSON.parse($redis_basket.get(@session[:token]))
     sum = 0
-    products.each { |x| sum += x['price'] }
+    products.each { |x| sum += x['cost'].to_i }
     sum
   end
 
